@@ -52,7 +52,7 @@ categories: JS
     * 执行下列代码之后你写的博客内容就会上传至 github 了
     ```
     hexo clean 
-    hexo gegerate
+    hexo generate
     hexo deploy
     ```
 
