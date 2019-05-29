@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="vue学习"><meta name="keywords" content="JS"><meta name="author" content="陆阿狸"><meta name="copyright" content="陆阿狸"><title>vue学习 | 陆阿狸的博客</title><link rel="shortcut icon" href="/img/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC-与-MVVM-的区别"><span class="toc-number">1.</span> <span class="toc-text">MVC 与 MVVM 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-实例"><span class="toc-number">2.</span> <span class="toc-text">Vue 实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双向数据绑定"><span class="toc-number">3.</span> <span class="toc-text">双向数据绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态添加数据的注意点"><span class="toc-number">4.</span> <span class="toc-text">动态添加数据的注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异步-DOM-更新"><span class="toc-number">5.</span> <span class="toc-text">异步 DOM 更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-指令"><span class="toc-number">6.</span> <span class="toc-text">Vue 指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#样式处理-class-和-style"><span class="toc-number">7.</span> <span class="toc-text">样式处理 -class 和 style</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤器-filter"><span class="toc-number">8.</span> <span class="toc-text">过滤器 filter</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">陆阿狸</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">2</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/sky.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">陆阿狸的博客</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">vue学习</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-29</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/JS/">JS</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><blockquote>
+<p>记录 Vue 的学习, Vue -渐进式JavaScript框架</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="MVC-与-MVVM-的区别"><a href="#MVC-与-MVVM-的区别" class="headerlink" title="MVC 与 MVVM 的区别"></a>MVC 与 MVVM 的区别</h2><p>MVC 是指 Model View Controller（模型-视图-控制器），是一种 Web 架构的模式。<br>MVVM 是指 Model-View-ViewModel，是一种基于前端开发的架构模式。<br>在MVC里，View是可以直接访问Model的！从而，View里会包含Model信息，不可避免的还要包括一些业务逻辑。 MVC模型关注的是Model的不变，所以，在MVC模型里，Model不依赖于View，但是 View是依赖于Model的。不仅如此，因为有一些业务逻辑在View里实现了，导致要更改View也是比较困难的，至少那些业务逻辑是无法重用的。<br>MVVM在概念上是真正将页面与数据逻辑分离的模式，它把数据绑定工作放到一个JS里去实现，而这个JS文件的主要功能是完成数据的绑定，即把model绑定到UI的元素上。</p>
+<h2 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h2><p><b>注意点：</b></p>
+<ol>
+<li>需要先在data中声明数据，再使用数据</li>
+<li>可以通过 vm.$data 访问到data中的所有属性，或者 vm.msg</li>
+</ol>
+<h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2><p>将DOM与Vue实例的data数据绑定到一起，彼此之间相互影响。通过 getter 和 setter 来实现双向绑定</p>
+<h2 id="动态添加数据的注意点"><a href="#动态添加数据的注意点" class="headerlink" title="动态添加数据的注意点"></a>动态添加数据的注意点</h2><p>只有 data 中的数据才是响应式的，动态添加进来的数据默认为非响应式<br>可以通过以下方式实现动态添加数据的响应式</p>
+<ol>
+<li>Vue.set(object, key, value) - 适用于添加单个属性</li>
+<li>Object.assign() - 适用于添加多个属性</li>
+</ol>
+<h2 id="异步-DOM-更新"><a href="#异步-DOM-更新" class="headerlink" title="异步 DOM 更新"></a>异步 DOM 更新</h2><ul>
+<li>说明：Vue 异步执行 DOM 更新，监视所有数据改变，一次性更新DOM</li>
+<li>优势：可以去除重复数据，对于避免不必要的计算和避免重复 DOM 操作上，非常重要</li>
+<li>如果需要那到更新后 DOM 中的数据，则需要通过 Vue.nextTick(callback)：在DOM更新后，执行某个操作（属于DOM操作） 实例调用 vm.$nextTick(function () {})</li>
+</ul>
+<h2 id="Vue-指令"><a href="#Vue-指令" class="headerlink" title="Vue 指令"></a>Vue 指令</h2><p>Vue 指令一般是带有 v- 前缀的特殊属性，当表达式的值改变是，将其产生的连带影响，响应式地作用于 DOM</p>
+<ul>
+<li>v-text: 更新 DOM 对象的 textContent</li>
+<li>v-html: 更新 DOM 对象的 innerHTML</li>
+<li>v-bind: 当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</li>
+<li>v-on: 绑定事件， 绑定的事件定义在 methods 中</li>
+<li>事件修饰符<ul>
+<li>.stop 阻止冒泡，调用 event.stopPropagation()</li>
+<li>.prevent 阻止默认行为，调用 event.preventDefault()</li>
+<li>.capture 添加事件侦听器时使用事件捕获模式</li>
+<li>.self 只当事件在该元素本身（比如不是子元素）触发时，才会触发事件</li>
+<li>.once 事件只触发一次</li>
+</ul>
+</li>
+<li>v-model: 在表单元素上创建双向数据绑定，监听用户的输入事件以更新数据</li>
+<li>v-for: 基于源数据多次渲染元素或模板块</li>
+<li>key属性: 使用 v-for 的时候提供 key 属性，以获得性能提升。使用 key，Vue 会基于 key 的变化重新排列元素顺序，并且会移除 key 不存在的元素。</li>
+</ul>
+<h2 id="样式处理-class-和-style"><a href="#样式处理-class-和-style" class="headerlink" title="样式处理 -class 和 style"></a>样式处理 -class 和 style</h2><p>使用方式：v-bind:class=”expression” or :class=”expression”， 表达式的类型：字符串、数组、对象（重点）</p>
+<ul>
+<li><p>v-if 和 v-show</p>
+<ul>
+<li>v-if: 根据表达式的值的真假条件，销毁或重建元素</li>
+<li>v-show: 根据表达式之真假值，切换元素的 display CSS 属性</li>
+</ul>
+</li>
+<li><p>提升性能: v-pre<br>vue会跳过这个元素和它的子元素的编译过程。可以用来显示原始 Mustache 标签。跳过大量没有指令的节点会加快编译</p>
+</li>
+<li><p>提升性能：v-once<br>vue只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。</p>
+</li>
+</ul>
+<h2 id="过滤器-filter"><a href="#过滤器-filter" class="headerlink" title="过滤器 filter"></a>过滤器 filter</h2><p>文本数据格式化</p>
+<ul>
+<li>全局过滤器<br>通过全局方式创建的过滤器，在任何一个vue实例中都可以使用。使用全局过滤器的时候，需要先创建全局过滤器，再创建Vue实例。显示的内容由过滤器的返回值决定</li>
+<li>局部过滤器<br>局部过滤器是在某一个vue实例的内容创建的，只在当前实例中起作用</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">陆阿狸</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/05/29/vue学习/">http://yoursite.com/2019/05/29/vue学习/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">陆阿狸的博客</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JS/">JS</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/"><span>【JS进阶】你真的掌握变量和类型了吗</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/sky.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By 陆阿狸</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">QQ：397698632  微信：lxl_cwy</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
