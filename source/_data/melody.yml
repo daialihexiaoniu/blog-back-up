@@ -156,10 +156,13 @@ slide:
   parallaxBackgroundHorizontal: null
   parallaxBackgroundVertical: null
 
-# QR_code:
-  # - itemlist:
-  #     img:
-  #     text:
+QR_code:
+  - itemlist:
+      img: /img/微信打赏.png
+      text: 喜欢的话支持一下？
+  - itemlist:
+      img: /img/支付宝打赏.png
+      text: 喜欢的话支持一下？
 
 # adv:
   # enable: false
