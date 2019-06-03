@@ -48,7 +48,7 @@ highlight_theme: darker
 # Nav settings
 # ---------------
 social:
-  github: https://github.com/daialihexiaoniu
+  github fa: https://github.com/daialihexiaoniu
 
 # Algolia search
 # ---------------
@@ -80,7 +80,13 @@ fireworks: false
 # ---------------
 baidu_analytics: 
 
-google_analytics:
+google_analytics: UA-141300443-1
+
+google_adsense:
+  enable: true
+  js: //pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  client: ca-pub-9138439391803182
+  enable_page_level_ads: true
 
 # stylesheets loaded in the <head>
 # ---------------
