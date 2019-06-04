@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="一些面试题"><meta name="keywords" content="JS"><meta name="author" content="陆阿狸"><meta name="copyright" content="陆阿狸"><title>一些面试题 | 陆阿狸的博客</title><link rel="shortcut icon" href="/img/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-9138439391803182',
+  enable_page_level_ads: 'true'
+});
+</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-141300443-1', 'auto');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-和-CSS-面试题"><span class="toc-number">1.</span> <span class="toc-text">HTML 和 CSS 面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子模型"><span class="toc-number">1.1.</span> <span class="toc-text">盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块元素和行内元素"><span class="toc-number">1.2.</span> <span class="toc-text">块元素和行内元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端需要注意哪些SEO"><span class="toc-number">1.3.</span> <span class="toc-text">前端需要注意哪些SEO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从浏览器地址栏输入url到显示页面的步骤"><span class="toc-number">1.4.</span> <span class="toc-text">从浏览器地址栏输入url到显示页面的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP状态码及其含义"><span class="toc-number">1.5.</span> <span class="toc-text">HTTP状态码及其含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢"><span class="toc-number">1.6.</span> <span class="toc-text">浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Canvas和SVG有什么区别？"><span class="toc-number">1.7.</span> <span class="toc-text">Canvas和SVG有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-选择器分类"><span class="toc-number">1.8.</span> <span class="toc-text">CSS 选择器分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么-CSS-放在顶部而-JS-写在后面"><span class="toc-number">1.9.</span> <span class="toc-text">为什么 CSS 放在顶部而 JS 写在后面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position-的值有哪些，-relative-和-absolute-分别是相对于谁进行定位的？"><span class="toc-number">1.10.</span> <span class="toc-text">position 的值有哪些， relative 和 absolute 分别是相对于谁进行定位的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css-sprite是什么-有什么优缺点"><span class="toc-number">1.11.</span> <span class="toc-text">css sprite是什么,有什么优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#display-inline-block-什么时候不会显示间隙？"><span class="toc-number">1.12.</span> <span class="toc-text">display:inline-block 什么时候不会显示间隙？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PNG-GIF-JPG的区别及如何选"><span class="toc-number">1.13.</span> <span class="toc-text">PNG,GIF,JPG的区别及如何选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果需要手动写动画，你认为最小时间间隔是多久，为什么？"><span class="toc-number">1.14.</span> <span class="toc-text">如果需要手动写动画，你认为最小时间间隔是多久，为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS不同选择器的权重"><span class="toc-number">1.15.</span> <span class="toc-text">CSS不同选择器的权重</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS-面试题"><span class="toc-number">2.</span> <span class="toc-text">JS 面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout和setInterval的机制"><span class="toc-number">2.1.</span> <span class="toc-text">setTimeout和setInterval的机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些检验数据类型的方法"><span class="toc-number">2.2.</span> <span class="toc-text">一些检验数据类型的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET-和-POST-的区别，什么时候使用-POST-？"><span class="toc-number">2.3.</span> <span class="toc-text">GET 和 POST 的区别，什么时候使用 POST ？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#GET-和-POST-的区别如下："><span class="toc-number">2.3.1.</span> <span class="toc-text">GET 和 POST 的区别如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#以下情况中，请使用-POST："><span class="toc-number">2.3.2.</span> <span class="toc-text">以下情况中，请使用 POST：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AJAX-的局限性"><span class="toc-number">2.4.</span> <span class="toc-text">AJAX 的局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie-和-session-有什么区别和联系"><span class="toc-number">2.5.</span> <span class="toc-text">cookie 和 session 有什么区别和联系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#那些操作会造成内存泄漏？"><span class="toc-number">2.6.</span> <span class="toc-text">那些操作会造成内存泄漏？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说几条写JavaScript的基本规范？"><span class="toc-number">2.7.</span> <span class="toc-text">说几条写JavaScript的基本规范？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null，undefined-的区别？"><span class="toc-number">2.8.</span> <span class="toc-text">null，undefined 的区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#框架（vue-react）"><span class="toc-number">3.</span> <span class="toc-text">框架（vue/react）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM-（Model-View-ViewModel）优点："><span class="toc-number">3.1.</span> <span class="toc-text">MVVM （Model-View-ViewModel）优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#react-和-vue-有哪些不同？谈谈你的看法"><span class="toc-number">3.2.</span> <span class="toc-text">react 和 vue 有哪些不同？谈谈你的看法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-生命周期"><span class="toc-number">3.3.</span> <span class="toc-text">Vue 生命周期</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">陆阿狸</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">11</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">2</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/sky.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">陆阿狸的博客</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">一些面试题</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-06-04</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/JS/">JS</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><blockquote>
+<p>学而不思则罔，思而不学则殆。这一篇会将一些看到的面试题做一个总结。以后看到新的面试题也会持续的更新在这个里面。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="HTML-和-CSS-面试题"><a href="#HTML-和-CSS-面试题" class="headerlink" title="HTML 和 CSS 面试题"></a>HTML 和 CSS 面试题</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>   CSS 中盒子模型包括 IE 盒子模型和标准的 W3C 盒子模型。<br>   W3C 盒子模型： width = content （box-sizing: content-box）<br>   IE 盒子模型中： width = content + padding + border （box-sizing: border-box）</p>
+<h3 id="块元素和行内元素"><a href="#块元素和行内元素" class="headerlink" title="块元素和行内元素"></a>块元素和行内元素</h3><table>
+<thead>
+<tr>
+<th>块元素</th>
+<th>行内元素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>块元素会独占一行，默认情况下，其宽度会自动填满父元素宽度，即使设置了宽度也会独占一行</td>
+<td>行内元素不会独占一行，没有宽度和和高度属性。</td>
+</tr>
+<tr>
+<td>块级元素：div p form ul li h1-h6</td>
+<td>行内元素：span img input a i</td>
+</tr>
+</tbody>
+</table>
+<h3 id="前端需要注意哪些SEO"><a href="#前端需要注意哪些SEO" class="headerlink" title="前端需要注意哪些SEO"></a>前端需要注意哪些SEO</h3><ul>
+<li>合理的title、description、keywords：搜索对着三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可</li>
+<li>语义化的HTML代码，符合W3C规范：语义化代码让搜索引擎容易理解网页</li>
+<li>重要内容HTML代码放在最前：搜索引擎抓取HTML顺序是从上到下，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取</li>
+<li>重要内容不要用js输出：爬虫不会执行js获取内容</li>
+<li>少用iframe：搜索引擎不会抓取iframe中的内容</li>
+<li>非装饰性图片必须加alt</li>
+<li>提高网站速度：网站速度是搜索引擎排序的一个重要指标</li>
+</ul>
+<h3 id="从浏览器地址栏输入url到显示页面的步骤"><a href="#从浏览器地址栏输入url到显示页面的步骤" class="headerlink" title="从浏览器地址栏输入url到显示页面的步骤"></a>从浏览器地址栏输入url到显示页面的步骤</h3><ul>
+<li>浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；</li>
+<li>服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；</li>
+<li>浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；</li>
+<li>载入解析到的资源文件，渲染页面，完成。</li>
+</ul>
+<h3 id="HTTP状态码及其含义"><a href="#HTTP状态码及其含义" class="headerlink" title="HTTP状态码及其含义"></a>HTTP状态码及其含义</h3><ul>
+<li>1XX：信息状态码<ul>
+<li>100 Continue 继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息</li>
+</ul>
+</li>
+<li>2XX：成功状态码<ul>
+<li>200 OK 正常返回信息</li>
+<li>201 Created 请求成功并且服务器创建了新的资源</li>
+<li>202 Accepted 服务器已接受请求，但尚未处理</li>
+</ul>
+</li>
+<li>3XX：重定向<ul>
+<li>301 Moved Permanently 请求的网页已永久移动到新位置。</li>
+<li>302 Found 临时性重定向。</li>
+<li>303 See Other 临时性重定向，且总是使用 GET 请求新的 URI。</li>
+<li>304 Not Modified 自从上次请求后，请求的网页未修改过。</li>
+</ul>
+</li>
+<li>4XX：客户端错误<ul>
+<li>400 Bad Request 服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。</li>
+<li>401 Unauthorized 请求未授权。</li>
+<li>403 Forbidden 禁止访问。</li>
+<li>404 Not Found 找不到如何与 URI 相匹配的资源。</li>
+</ul>
+</li>
+<li>5XX: 服务器错误<ul>
+<li>500 Internal Server Error 最常见的服务器端错误。</li>
+<li>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢"><a href="#浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢" class="headerlink" title="浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢"></a>浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢</h3><ul>
+<li>在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。</li>
+<li>离线的情况下，浏览器就直接使用离线存储的资源。</li>
+</ul>
+<h3 id="Canvas和SVG有什么区别？"><a href="#Canvas和SVG有什么区别？" class="headerlink" title="Canvas和SVG有什么区别？"></a>Canvas和SVG有什么区别？</h3><ul>
+<li>svg绘制出来的每一个图形的元素都是独立的DOM节点，能够方便的绑定事件或用来修改。canvas输出的是一整幅画布</li>
+<li>svg输出的图形是矢量图形，后期可以修改参数来自由放大缩小，不会是失真和锯齿。而canvas输出标量画布，就像一张图片一样，放大会失真或者锯齿</li>
+</ul>
+<h3 id="CSS-选择器分类"><a href="#CSS-选择器分类" class="headerlink" title="CSS 选择器分类"></a>CSS 选择器分类</h3><p>基本选择器：</p>
+<ul>
+<li>id选择器：id = name</li>
+<li>类选择器：class = “name”</li>
+<li>标签选择器：body, div, ul</li>
+<li>全局选择器：* </li>
+</ul>
+<p>复杂选择器：</p>
+<ul>
+<li>组合选择器：.head .head_logo</li>
+<li>后代选择器：ul li 从父集到子集</li>
+<li>群组选择器：div span {color: red} 具有相同样式的标签分组显示</li>
+<li>继承选择器：</li>
+<li>为类选择器：链接样式 a:hover</li>
+<li>子选择器：div &gt; p </li>
+<li>css 相邻兄弟选择器： h1 + p</li>
+</ul>
+<p>优先级：</p>
+<ul>
+<li>属性后面加 !import 会覆盖页面内任何位置定义的元素样式</li>
+<li>作为 style 属性写在元素内的样式</li>
+<li>id 选择器</li>
+<li>类选择器</li>
+<li>标签选择器</li>
+<li>通配符选择器（*）</li>
+<li>浏览器自定义或继承</li>
+</ul>
+<h3 id="为什么-CSS-放在顶部而-JS-写在后面"><a href="#为什么-CSS-放在顶部而-JS-写在后面" class="headerlink" title="为什么 CSS 放在顶部而 JS 写在后面"></a>为什么 CSS 放在顶部而 JS 写在后面</h3><ul>
+<li>浏览器预先加载 CSS 后，可以不必等待 HTML 加载完毕就可以渲染页面了。</li>
+<li>HTML 渲染并不会等到完全加载完在渲染页面，而是一边解析 DOM 一边渲染。</li>
+<li>JS 写在尾部，主要是因为 JS主要扮演事件处理的功能，一方面很多操作是在页面渲染后才执行的。另一方面，可以节省加载时间，是页面能够更好的加载，提高用户的良好体验。</li>
+</ul>
+<h3 id="position-的值有哪些，-relative-和-absolute-分别是相对于谁进行定位的？"><a href="#position-的值有哪些，-relative-和-absolute-分别是相对于谁进行定位的？" class="headerlink" title="position 的值有哪些， relative 和 absolute 分别是相对于谁进行定位的？"></a>position 的值有哪些， relative 和 absolute 分别是相对于谁进行定位的？</h3><ul>
+<li>relative： 相对定位，相对于自己本身在正常文档流中的位置进行定位。</li>
+<li>absolute：生成绝对定位，相对于最近一级定位不为 static 的父元素进行定位。</li>
+<li>fixed： 生成绝对定位，相对于浏览器窗口或者 iframe 进行定位。</li>
+<li>static：默认值，没有定位，元素出现在正常文档流中。</li>
+<li>stricky：生成粘性定位元素，容器的位置根据正常文档流计算得出。</li>
+</ul>
+<h3 id="css-sprite是什么-有什么优缺点"><a href="#css-sprite是什么-有什么优缺点" class="headerlink" title="css sprite是什么,有什么优缺点"></a>css sprite是什么,有什么优缺点</h3><ul>
+<li>概念：将多个小图片拼接到一个图片中。通过background-position和元素尺寸调节需要显示的背景图案。</li>
+<li>优点：<ul>
+<li>减少HTTP请求数，极大地提高页面加载速度</li>
+<li>增加图片信息重复度，提高压缩比，减少图片大小</li>
+<li>更换风格方便，只需在一张或几张图片上修改颜色或样式即可实现</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>图片合并麻烦</li>
+<li>维护麻烦，修改一个图片可能需要从新布局整个图片，样式</li>
+</ul>
+</li>
+</ul>
+<h3 id="display-inline-block-什么时候不会显示间隙？"><a href="#display-inline-block-什么时候不会显示间隙？" class="headerlink" title="display:inline-block 什么时候不会显示间隙？"></a>display:inline-block 什么时候不会显示间隙？</h3><ul>
+<li>移除空格</li>
+<li>使用margin负值</li>
+<li>使用font-size:0</li>
+<li>letter-spacing</li>
+<li>word-spacing</li>
+</ul>
+<h3 id="PNG-GIF-JPG的区别及如何选"><a href="#PNG-GIF-JPG的区别及如何选" class="headerlink" title="PNG,GIF,JPG的区别及如何选"></a>PNG,GIF,JPG的区别及如何选</h3><ul>
+<li>GIF<ul>
+<li>8位像素，256色</li>
+<li>无损压缩</li>
+<li>支持简单动画</li>
+<li>支持boolean透明</li>
+<li>适合简单动画</li>
+</ul>
+</li>
+<li>JPEG<ul>
+<li>颜色限于256</li>
+<li>有损压缩</li>
+<li>可控制压缩质量</li>
+<li>不支持透明</li>
+<li>适合照片</li>
+</ul>
+</li>
+<li>PNG<ul>
+<li>有PNG8和truecolor PNG</li>
+<li>PNG8类似GIF颜色上限为256，文件小，支持alpha透明度，无动画</li>
+<li>适合图标、背景、按钮</li>
+</ul>
+</li>
+</ul>
+<h3 id="如果需要手动写动画，你认为最小时间间隔是多久，为什么？"><a href="#如果需要手动写动画，你认为最小时间间隔是多久，为什么？" class="headerlink" title="如果需要手动写动画，你认为最小时间间隔是多久，为什么？"></a>如果需要手动写动画，你认为最小时间间隔是多久，为什么？</h3><ul>
+<li>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</li>
+</ul>
+<h3 id="CSS不同选择器的权重"><a href="#CSS不同选择器的权重" class="headerlink" title="CSS不同选择器的权重"></a>CSS不同选择器的权重</h3><ul>
+<li>!important规则最重要，大于其它规则</li>
+<li>行内样式规则，加1000</li>
+<li>对于选择器中给定的各个ID属性值，加100</li>
+<li>对于选择器中给定的各个类属性、属性选择器或者伪类选择器，加10</li>
+<li>对于选择其中给定的各个元素标签选择器，加1</li>
+<li>如果权值一样，则按照样式规则的先后顺序来应用，顺序靠后的覆盖靠前的规则</li>
+</ul>
+<h2 id="JS-面试题"><a href="#JS-面试题" class="headerlink" title="JS 面试题"></a>JS 面试题</h2><h3 id="setTimeout和setInterval的机制"><a href="#setTimeout和setInterval的机制" class="headerlink" title="setTimeout和setInterval的机制"></a>setTimeout和setInterval的机制</h3><p>因为js是单线程的。浏览器遇到etTimeout和setInterval会先执行完当前的代码块，在此之前会把定时器推入浏览器的待执行时间队列里面，等到浏览器执行完当前代码之后会看下事件队列里有没有任务，有的话才执行定时器里的代码。</p>
+<h3 id="一些检验数据类型的方法"><a href="#一些检验数据类型的方法" class="headerlink" title="一些检验数据类型的方法"></a>一些检验数据类型的方法</h3><p>千万不要使用typeof来判断对象和数组，因为这种类型都会返回object。</p>
+<ul>
+<li>typeOf()是判断基本类型的Boolean,Number，symbol, undefined, String。 对于引用类型：除function，都返回object null返回object。</li>
+<li>installOf() 用来判断A是否是B的实例，installof检查的是原型。</li>
+<li>toString() 是Object的原型方法，对于 Object 对象，直接调用 toString() 就能返回 [Object Object] 。而对于其他对象，则需要通过 call / apply 来调用才能返回正确的类型信息。</li>
+<li>hasOwnProperty()方法返回一个布尔值，指示对象自身属性中是否具有指定的属性，该方法会忽略掉那些从原型链上继承到的属性。</li>
+<li>isProperty()方法测试一个对象是否存在另一个对象的原型链上。</li>
+<li>valueof：所有对象都有valueof，如果存在任意原始值，他就默认将对象转化为表示它的原始值。如果对象是复合值，而却大部分对象无法真正表示一个原始值，因此默认的valueof()方法简单的返回对象本身，而不是返回原始值。</li>
+</ul>
+<h3 id="GET-和-POST-的区别，什么时候使用-POST-？"><a href="#GET-和-POST-的区别，什么时候使用-POST-？" class="headerlink" title="GET 和 POST 的区别，什么时候使用 POST ？"></a>GET 和 POST 的区别，什么时候使用 POST ？</h3><h4 id="GET-和-POST-的区别如下："><a href="#GET-和-POST-的区别如下：" class="headerlink" title="GET 和 POST 的区别如下："></a>GET 和 POST 的区别如下：</h4><ul>
+<li>GET：一般用于查询数据，使用 URL 传递参数，由于浏览器对地址栏长度有限制，所以使用 GET 方式所发送信息的数量有限制，同时浏览器记录（历史记录，缓存）会保留请求地址的信息，包括地址后面的数据。GET 只能发送普通格式（URL 编码格式）的数据。</li>
+<li>POST：一般用于向服务器发送数据，对所发送的数据的大小理论上是没有限制，浏览器会缓存记录地址，但不会记录 POST 提交的数据。POST 可以发送纯文本、URL 编码格式、二进制格式的字符串，形式多样。</li>
+</ul>
+<h4 id="以下情况中，请使用-POST："><a href="#以下情况中，请使用-POST：" class="headerlink" title="以下情况中，请使用 POST："></a>以下情况中，请使用 POST：</h4><ul>
+<li>以提交为目的的请求（类似语义化，get 表示请求，post 表示提交）；</li>
+<li>发送私密类数据（用户名、密码）（因为浏览器缓存记录特性）；</li>
+<li>向服务器发送大量数据（数据大小限制区别）；</li>
+<li>上传文件图片时（数据类型区别）</li>
+</ul>
+<h3 id="AJAX-的局限性"><a href="#AJAX-的局限性" class="headerlink" title="AJAX 的局限性"></a>AJAX 的局限性</h3><ul>
+<li>AJAX 不支持浏览器 back 按钮。</li>
+<li>安全问题 AJAX 暴露了与服务器交互的细节。</li>
+<li>对搜索引擎的支持比较弱。不会执行你的 JS 脚本，只会操作你的网页源代码；</li>
+<li>跨域请求有一定限制。解决方式：jsonp；</li>
+</ul>
+<h3 id="cookie-和-session-有什么区别和联系"><a href="#cookie-和-session-有什么区别和联系" class="headerlink" title="cookie 和 session 有什么区别和联系"></a>cookie 和 session 有什么区别和联系</h3><ul>
+<li>cookie 数据存放在客户的浏览器上， session 数据存放在服务器上</li>
+<li>session 比 cookie 更安全</li>
+<li>单个 cookie 保存的数据不能超多 4k ， 很多浏览器限制一个站点最多保存20个 cookie</li>
+<li>一般用 cookie 来存放 sessionId</li>
+</ul>
+<h3 id="那些操作会造成内存泄漏？"><a href="#那些操作会造成内存泄漏？" class="headerlink" title="那些操作会造成内存泄漏？"></a>那些操作会造成内存泄漏？</h3><ul>
+<li>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在</li>
+<li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏</li>
+<li>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</li>
+</ul>
+<h3 id="说几条写JavaScript的基本规范？"><a href="#说几条写JavaScript的基本规范？" class="headerlink" title="说几条写JavaScript的基本规范？"></a>说几条写JavaScript的基本规范？</h3><ul>
+<li>不要在同一行声明多个变量</li>
+<li>请使用===/!==来比较true/false或者数值</li>
+<li>使用对象字面量替代new Array这种形式</li>
+<li>不要使用全局函数</li>
+<li>Switch语句必须带有default分支</li>
+<li>If语句必须使用大括号</li>
+<li>for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污</li>
+</ul>
+<h3 id="null，undefined-的区别？"><a href="#null，undefined-的区别？" class="headerlink" title="null，undefined 的区别？"></a>null，undefined 的区别？</h3><ul>
+<li>undefined 表示不存在这个值。</li>
+<li>undefined :是一个表示”无”的原始值或者说表示”缺少值”，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined</li>
+<li>例如变量被声明了，但没有赋值时，就等于undefined</li>
+<li>null 表示一个对象被定义了，值为“空值”</li>
+<li>null : 是一个对象(空对象, 没有任何属性和方法)</li>
+<li>例如作为函数的参数，表示该函数的参数不是对象；</li>
+<li>在验证null时，一定要使用　=== ，因为 ==无法分别null 和　undefined</li>
+</ul>
+<h2 id="框架（vue-react）"><a href="#框架（vue-react）" class="headerlink" title="框架（vue/react）"></a>框架（vue/react）</h2><h3 id="MVVM-（Model-View-ViewModel）优点："><a href="#MVVM-（Model-View-ViewModel）优点：" class="headerlink" title="MVVM （Model-View-ViewModel）优点："></a>MVVM （Model-View-ViewModel）优点：</h3><ul>
+<li>低耦合：视图(View)可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可重用性：你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
+<li>独立开发：开发人员可以专注于业务逻辑和数据的开发(ViewModel)，设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xaml代码。</li>
+<li>可测试：界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li>
+</ul>
+<h3 id="react-和-vue-有哪些不同？谈谈你的看法"><a href="#react-和-vue-有哪些不同？谈谈你的看法" class="headerlink" title="react 和 vue 有哪些不同？谈谈你的看法"></a>react 和 vue 有哪些不同？谈谈你的看法</h3><ul>
+<li>两者都采用了 virtual dom 的方式，性能都很好</li>
+<li>ui 上都采用组件化的写法，开发效率很高。</li>
+<li>vue 采用双向数据绑定， react 是单项数据绑定。当工程规模比较大时，双向数据绑定会很难维护</li>
+<li>vue 适合不会持续的，小型的 web 应用，使用 vue.js 能带来短期内较高的开发效率， 否则采用 react。</li>
+</ul>
+<h3 id="Vue-生命周期"><a href="#Vue-生命周期" class="headerlink" title="Vue 生命周期"></a>Vue 生命周期</h3><p>生命周期函数就是组件在初始化或者数据更新时会触发的钩子函数。</p>
+<ul>
+<li>beforeCreate()<br>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用<br>注意：此时，无法获取 data中的数据、methods中的方法</li>
+<li>created()<br>注意：这是一个常用的生命周期，可以调用methods中的方法、改变data中的数据</li>
+<li>beforeMounted()<br>在挂载开始之前被调用</li>
+<li>mounted()<br>此时，vue实例已经挂载到页面中，可以获取到el中的DOM元素，进行DOM操作</li>
+<li>beforeUpdated()<br>数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。<br>注意：此处获取的数据是更新后的数据，但是获取页面中的DOM元素是更新之前的</li>
+<li>updated()<br>组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。</li>
+<li>beforeDestroy()<br>实例销毁之前调用。在这一步，实例仍然完全可用。<br>使用场景：实例销毁之前，执行清理任务，比如：清除定时器等</li>
+<li>destroyed()<br>Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">陆阿狸</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/06/04/一些面试题/">http://yoursite.com/2019/06/04/一些面试题/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">陆阿狸的博客</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JS/">JS</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/微信打赏.png"><div class="post-qr-code__desc">喜欢的话支持一下？</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/支付宝打赏.png"><div class="post-qr-code__desc">喜欢的话支持一下？</div></div></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/05/31/前端需要知道的Javascript技巧/"><span>前端需要知道的Javascript技巧</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/sky.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By 陆阿狸</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">QQ：397698632  微信：lxl_cwy <br> 欢迎来咨询~</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
