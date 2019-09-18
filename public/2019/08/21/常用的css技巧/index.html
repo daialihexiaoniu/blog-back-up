@@ -1,55 +1,327 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="常用的css技巧"><meta name="keywords" content="CSS"><meta name="author" content="陆阿狸"><meta name="copyright" content="陆阿狸"><title>常用的css技巧 | 陆阿狸的博客</title><link rel="shortcut icon" href="/img/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
-  google_ad_client: 'ca-pub-9138439391803182',
-  enable_page_level_ads: 'true'
-});
-</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!DOCTYPE html>
+<html>
 
-ga('create', 'UA-141300443-1', 'auto');
-ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  }
-} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">陆阿狸</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">14</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/sky.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">陆阿狸的博客</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">常用的css技巧</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-22</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/CSS/">CSS</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>日常中可能会遇到各种各样的css问题， 常见的一些比如垂直居中，图片居中，清除浮动，按钮样式，滚动条自定义等，这边整理一些可能会比较常用的技巧，希望大家能够喜欢。<br><a id="more"></a></p>
+<head><meta name="generator" content="Hexo 3.8.0">
+  
+  <title>常用的css技巧 - 陆阿狸的博客</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="天天撸狗，天天快乐">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/img/my-favicon.ico" type="image/png">
+  <meta name="description" content="日常中可能会遇到各种各样的css问题， 常见的一些比如垂直居中，图片居中，清除浮动，按钮样式，滚动条自定义等，这边整理一些可能会比较常用的技巧，希望大家能够喜欢。">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用的css技巧">
+<meta property="og:url" content="http://yoursite.com/2019/08/21/常用的css技巧/index.html">
+<meta property="og:site_name" content="陆阿狸的博客">
+<meta property="og:description" content="日常中可能会遇到各种各样的css问题， 常见的一些比如垂直居中，图片居中，清除浮动，按钮样式，滚动条自定义等，这边整理一些可能会比较常用的技巧，希望大家能够喜欢。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-18T03:00:17.396Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用的css技巧">
+<meta name="twitter:description" content="日常中可能会遇到各种各样的css问题， 常见的一些比如垂直居中，图片居中，清除浮动，按钮样式，滚动条自定义等，这边整理一些可能会比较常用的技巧，希望大家能够喜欢。">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1568785748159">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/img/sky.png)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="陆阿狸" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="陆阿狸">
+            <img src="/img/avatar.jpg" alt="陆阿狸">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>14</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/daialihexiaoniu/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/CSS/">CSS</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/JS/">JS</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/杂记/">杂记</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2019 陆阿狸
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+            <img src="/img/sky.png">
+        
+        <h1>常用的css技巧</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月21日</a>
+    <a><i class="nexmoefont icon-areachart"></i>553 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/CSS/">CSS</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/CSS/">CSS</a>
+    
+  </div>
+  <article>
+    <p>日常中可能会遇到各种各样的css问题， 常见的一些比如垂直居中，图片居中，清除浮动，按钮样式，滚动条自定义等，这边整理一些可能会比较常用的技巧，希望大家能够喜欢。<br><a id="more"></a></p>
 <ol>
-<li><p>清除浮动<br>文档元素浮动情况下，会出现各种问题，这时候需要清除浮动： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">     content: &quot;.&quot;; </span><br><span class="line">     display: block;</span><br><span class="line">     clear: both;</span><br><span class="line">     visibility: hidden;</span><br><span class="line">     line-height: 0;</span><br><span class="line">     height: 0; </span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123; display: inline-block; &#125;</span><br><span class="line">html[xmlns] .clearfix &#123; display: block; &#125;</span><br><span class="line">* html .clearfix &#123; height: 1%; &#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>清除浮动<br>文档元素浮动情况下，会出现各种问题，这时候需要清除浮动：<br><code>`</code><br>.clearfix:after {<br>  content: “.”;<br>  display: block;<br>  clear: both;<br>  visibility: hidden;<br>  line-height: 0;<br>  height: 0;<br>}<br>.clearfix { display: inline-block; }<br>html[xmlns] .clearfix { display: block; }</li>
+</ol>
+<ul>
+<li>html .clearfix { height: 1%; }<br><code>`</code></li>
+</ul>
+<ol start="2">
 <li><p>文本省略显示…<br>文本超过一定宽度时，需要显示省略号。<br>单行省略（需要设置外层宽度）： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text-overflow &#123;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    overflow: hidden；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>多行省略（css多行省略在chrome生效需要设置高度、宽度）：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.text-overflow-more &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">    display: -webkit-box;</span><br><span class="line">    -webkit-line-clamp: 3;</span><br><span class="line">    -webkit-box-orient: vertical;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>透明效果，兼容不同浏览器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.transparent &#123;</span><br><span class="line">    filter: alpha(opacity=50); /* internet explorer */</span><br><span class="line">    -khtml-opacity: 0.5;      /* khtml, old safari */</span><br><span class="line">    -moz-opacity: 0.5;       /* mozilla, netscape */</span><br><span class="line">    opacity: 0.5;           /* fx, safari, opera */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>制作三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.triangle &#123; </span><br><span class="line">    border-color: transparent transparent green transparent; </span><br><span class="line">    border-style: solid; </span><br><span class="line">    border-width: 0px 300px 300px 300px; </span><br><span class="line">    height: 0px; </span><br><span class="line">    width: 0px; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>禁止换行, 文字只在一行内显示不换行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.nowrap &#123;white-space:nowrap;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>文字渐变效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text-gradient&#123;</span><br><span class="line">    background-image: linear-gradient(135deg, deeppink, deepskyblue);</span><br><span class="line">    -webkit-background-clip: text;</span><br><span class="line">    color: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>背景渐变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.gradient&#123;</span><br><span class="line">    background: #e6e6e6;   //当浏览器不支持背景渐变时该语句将会被执行</span><br><span class="line">    background: -o-linear-gradient(top, #fdfdfd,  #e6e6e6); </span><br><span class="line">    background: -moz-linear-gradient(top, #fdfdfd, #e6e6e6); </span><br><span class="line">    background: -webkit-linear-gradient(top, #fdfdfd, #e6e6e6);   //最新发布语法</span><br><span class="line">    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), #e6e6e6);   //老式语法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>.text-overflow {
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden；
+}
+</code></pre><p>多行省略（css多行省略在chrome生效需要设置高度、宽度）：</p>
+<pre><code> .text-overflow-more {
+     overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
+ }
+</code></pre></li>
+</ol>
+<ol start="3">
+<li>透明效果，兼容不同浏览器<pre><code>.transparent {
+ filter: alpha(opacity=50); /* internet explorer */
+ -khtml-opacity: 0.5;      /* khtml, old safari */
+ -moz-opacity: 0.5;       /* mozilla, netscape */
+ opacity: 0.5;           /* fx, safari, opera */
+}
+</code></pre></li>
+<li>制作三角形<pre><code>.triangle { 
+ border-color: transparent transparent green transparent; 
+ border-style: solid; 
+ border-width: 0px 300px 300px 300px; 
+ height: 0px; 
+ width: 0px; 
+}
+</code></pre></li>
+<li>禁止换行, 文字只在一行内显示不换行<pre><code>.nowrap {white-space:nowrap;}
+</code></pre></li>
+<li>文字渐变效果<pre><code>.text-gradient{
+ background-image: linear-gradient(135deg, deeppink, deepskyblue);
+ -webkit-background-clip: text;
+ color: transparent;
+}
+</code></pre></li>
+<li>背景渐变<pre><code>.gradient{
+ background: #e6e6e6;   //当浏览器不支持背景渐变时该语句将会被执行
+ background: -o-linear-gradient(top, #fdfdfd,  #e6e6e6); 
+ background: -moz-linear-gradient(top, #fdfdfd, #e6e6e6); 
+ background: -webkit-linear-gradient(top, #fdfdfd, #e6e6e6);   //最新发布语法
+ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), #e6e6e6);   //老式语法
+}
+</code></pre></li>
 <li><p>自定义滚动条<br>css元素(针对chrome浏览器，其他浏览器可能不生效)</p>
 <blockquote>
 <p>整体部分 ::-webkit-scrollbar<br>两端按钮 ::-webkit-scrollbar-button<br>外层轨道 ::-webkit-scrollbar-track<br>内层轨道 ::-webkit-scrollbar-track-piece<br>滚动滑块 ::-webkit-scrollbar-thumb<br>边角 ::-webkit-scrollbar-corner<br>边角拖动块的样式 ::-webkit-resizer</p>
 </blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.scroll-horizontal::-webkit-scrollbar&#123;</span><br><span class="line">    height: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-button&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 5px;</span><br><span class="line">    border: 5px solid transparent;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-button:start:decrement&#123;</span><br><span class="line">    border-right-color: red;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-button:end:increment&#123;</span><br><span class="line">    border-left-color: red;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-button:end:decrement&#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-button:start:increment&#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-thumb&#123;</span><br><span class="line">    background-color: green;</span><br><span class="line">    border-radius: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-track-piece&#123;</span><br><span class="line">    /* background-color: #0898b2; */</span><br><span class="line">    border-radius: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.scroll-horizontal::-webkit-scrollbar-track&#123;</span><br><span class="line">    border: 1px solid #721f1f;</span><br><span class="line">    border-radius: 30px;</span><br><span class="line">    margin: 0 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>
+ .scroll-horizontal::-webkit-scrollbar{
+     height: 10px;
+ }
+ .scroll-horizontal::-webkit-scrollbar-button{
+     display: block;
+     width: 5px;
+     border: 5px solid transparent;
+ }
+ .scroll-horizontal::-webkit-scrollbar-button:start:decrement{
+     border-right-color: red;
+ }
+ .scroll-horizontal::-webkit-scrollbar-button:end:increment{
+     border-left-color: red;
+ }
+ .scroll-horizontal::-webkit-scrollbar-button:end:decrement{
+     display: none;
+ }
+ .scroll-horizontal::-webkit-scrollbar-button:start:increment{
+     display: none;
+ }
+ .scroll-horizontal::-webkit-scrollbar-thumb{
+     background-color: green;
+     border-radius: 30px;
+ }
+ .scroll-horizontal::-webkit-scrollbar-track-piece{
+     /* background-color: #0898b2; */
+     border-radius: 30px;
+ }
+ .scroll-horizontal::-webkit-scrollbar-track{
+     border: 1px solid #721f1f;
+     border-radius: 30px;
+     margin: 0 5px;
+ }
+</code></pre></li>
 </ol>
-</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">陆阿狸</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/08/21/常用的css技巧/">http://yoursite.com/2019/08/21/常用的css技巧/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">陆阿狸的博客</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CSS/">CSS</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/微信打赏.png"><div class="post-qr-code__desc">喜欢的话支持一下？</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/支付宝打赏.png"><div class="post-qr-code__desc">喜欢的话支持一下？</div></div></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/08/29/常见正则表达式/"><i class="fa fa-chevron-left">  </i><span>常见正则表达式</span></a></div><div class="next-post pull-right"><a href="/2019/06/20/前端知识总谱/"><span>前端知识谱</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/sky.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By 陆阿狸</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">QQ：397698632  微信：lxl_cwy <br> 欢迎来咨询~</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-  $('#nav').addClass('is-mobile')
-  $('footer').addClass('is-mobile')
-}</script></body></html>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>陆阿狸<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2019/08/21/常用的css技巧/" title="http://yoursite.com/2019/08/21/常用的css技巧/" target="_blank" rel="noopener">http://yoursite.com/2019/08/21/常用的css技巧/</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1568785748165"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
