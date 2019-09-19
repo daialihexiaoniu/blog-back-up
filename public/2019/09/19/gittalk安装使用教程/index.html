@@ -3,7 +3,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
   
-  <title>标签 - 陆阿狸的博客</title>
+  <title>gittalk安装使用教程 - 陆阿狸的博客</title>
   <meta charset="UTF-8">
   <meta name="description" content="天天撸狗，天天快乐">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,17 +11,23 @@
   
 
   <link rel="shortcut icon" href="/img/my-favicon.ico" type="image/png">
-  <meta name="description" content="天天撸狗，天天快乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="引用了新的主题之后，加入了评论功能，评论使用的是gittalk，下面介绍下gittalk的使用教程。">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gittalk安装使用教程">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/gittalk安装使用教程/index.html">
 <meta property="og:site_name" content="陆阿狸的博客">
-<meta property="og:description" content="天天撸狗，天天快乐">
+<meta property="og:description" content="引用了新的主题之后，加入了评论功能，评论使用的是gittalk，下面介绍下gittalk的使用教程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-18T03:00:17.428Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/gittalk安装使用教程/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/gittalk安装使用教程/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/gittalk安装使用教程/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/gittalk安装使用教程/04.png">
+<meta property="og:updated_time" content="2019-09-19T01:29:06.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="天天撸狗，天天快乐">
+<meta name="twitter:title" content="gittalk安装使用教程">
+<meta name="twitter:description" content="引用了新的主题之后，加入了评论功能，评论使用的是gittalk，下面介绍下gittalk的使用教程。">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/19/gittalk安装使用教程/01.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -29,7 +35,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1568856575147">
+  <link rel="stylesheet" href="/css/style.css?v=1568856575160">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -149,24 +155,64 @@
         
             <img src="/img/sky.png">
         
-        <h1>标签</h1>
+        <h1>gittalk安装使用教程</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月27日</a>
-    <a><i class="nexmoefont icon-areachart"></i>0 字</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月19日</a>
+    <a><i class="nexmoefont icon-areachart"></i>318 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
     
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/hexo/">hexo</a>
     
   </div>
   <article>
-    
+    <p>引用了新的主题之后，加入了评论功能，评论使用的是gittalk，下面介绍下gittalk的使用教程。</p>
+<a id="more"></a>
+<ol>
+<li><p>gittalk 需要你有自己的 github 账号，这一步请大家自己上网百度如何有自己的 github 账号。</p>
+</li>
+<li><p>拥有 github 账号之后， 点击头像，点击 settings<br><img src="./01.png" alt="settings"></p>
+</li>
+<li><p>点击 Developer settings<br><img src="./02.png" alt="Developer settings"></p>
+</li>
+<li><p>点击 OAuth Apps，点击 New OAuth Apps<br><img src="./03.png" alt="OAuth Apps"></p>
+</li>
+<li><p>接下来我们会看到这个页面<br><img src="./04.png" alt="New OAuth Apps"></p>
+</li>
+</ol>
+<ul>
+<li><code>Application name</code>： 填写你的应用的名称</li>
+<li><code>Homepage URL</code>：填写你博客仓库的地址</li>
+<li><code>Application description</code>：填写应用的表述</li>
+<li><code>Authorization callback URL</code>：填写博客的地址<br>这边要注意两个 url 内容不要填错了，填错的话可能就会出问题哦。</li>
+</ul>
+<ol start="6">
+<li><p>有时你会遇到 gittalk error: validation failed. 这个错误。<br>遇到这个错误时，需要找到你这边主题创建 gittalk 的地方，找到 id，增加 decodeURI。</p>
+<pre><code>var gitalk = new Gitalk({
+ clientID: &#39;&lt;%= theme.gitalk.clientID %&gt;&#39;,
+ clientSecret: &#39;&lt;%= theme.gitalk.clientSecret %&gt;&#39;,
+ id: decodeURI(window.location.pathname),
+ repo: &#39;&lt;%= theme.gitalk.repo %&gt;&#39;,
+ owner: &#39;&lt;%= theme.gitalk.owner %&gt;&#39;,
+ admin: &#39;&lt;%= theme.gitalk.admin %&gt;&#39;
+})
+gitalk.render(&#39;gitalk&#39;)
+</code></pre></li>
+<li><p>有时你会遇到 Error:Not found 这个错误.<br>这个错误的产生主要是第5步内容填写的不对，url内容需要按照上面的正确填写哦。</p>
+</li>
+</ol>
+<p>✿✿ヽ(°▽°)ノ✿</p>
+
   </article>
   
     
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>陆阿狸<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/tags/index.html" title="http://yoursite.com/tags/index.html" target="_blank" rel="noopener">http://yoursite.com/tags/index.html</a><br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2019/09/19/gittalk安装使用教程/" title="http://yoursite.com/2019/09/19/gittalk安装使用教程/" target="_blank" rel="noopener">http://yoursite.com/2019/09/19/gittalk安装使用教程/</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -206,7 +252,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1568856575155"></script>
+<script src="/js/app.js?v=1568856575164"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
