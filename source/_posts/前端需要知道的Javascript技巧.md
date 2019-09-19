@@ -1,7 +1,7 @@
 ---
 title: 前端需要知道的Javascript技巧
 date: 2019-05-31 14:19:52
-tags: JS
+tags: js知识
 categories: JS
 ---
 

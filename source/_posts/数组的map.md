@@ -1,7 +1,7 @@
 ---
 title: 数组的 map、filter、sort 和 reduce 的用法
 date: 2018-08-01 11:54:05
-tags: JS
+tags: js知识
 categories: JS
 ---
 

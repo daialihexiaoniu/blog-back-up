@@ -9,6 +9,7 @@ categories: CSS
 
 1. 清除浮动
    文档元素浮动情况下，会出现各种问题，这时候需要清除浮动： 
+
 ```
 .clearfix:after {
      content: "."; 
@@ -26,6 +27,7 @@ html[xmlns] .clearfix { display: block; }
 2. 文本省略显示...
    文本超过一定宽度时，需要显示省略号。
    单行省略（需要设置外层宽度）： 
+
 ```
 .text-overflow {
     text-overflow: ellipsis;
@@ -47,6 +49,7 @@ html[xmlns] .clearfix { display: block; }
 
 
 3. 透明效果，兼容不同浏览器
+
 ```
 .transparent {
     filter: alpha(opacity=50); /* internet explorer */
@@ -55,7 +58,9 @@ html[xmlns] .clearfix { display: block; }
     opacity: 0.5;           /* fx, safari, opera */
 }
 ```
+
 4. 制作三角形
+
 ```
 .triangle { 
     border-color: transparent transparent green transparent; 
@@ -65,11 +70,15 @@ html[xmlns] .clearfix { display: block; }
     width: 0px; 
 }
 ```
+
 5. 禁止换行, 文字只在一行内显示不换行
+
 ```
 .nowrap {white-space:nowrap;}
 ```
+
 6. 文字渐变效果
+
 ```
 .text-gradient{
     background-image: linear-gradient(135deg, deeppink, deepskyblue);
@@ -77,7 +86,9 @@ html[xmlns] .clearfix { display: block; }
     color: transparent;
 }
 ```
+
 7. 背景渐变
+
 ```
 .gradient{
     background: #e6e6e6;   //当浏览器不支持背景渐变时该语句将会被执行
@@ -87,7 +98,9 @@ html[xmlns] .clearfix { display: block; }
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), #e6e6e6);   //老式语法
 }
 ```
+
 8. 自定义滚动条
+
 css元素(针对chrome浏览器，其他浏览器可能不生效)
 >整体部分 ::-webkit-scrollbar
 >两端按钮 ::-webkit-scrollbar-button

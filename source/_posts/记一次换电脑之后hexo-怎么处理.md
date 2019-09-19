@@ -1,7 +1,7 @@
 ---
 title: 记一次换电脑之后hexo 怎么处理
 date: 2019-05-27 15:48:41
-tags: JS
+tags: hexo
 categories: JS
 ---
 

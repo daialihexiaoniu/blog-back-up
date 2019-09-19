@@ -1,7 +1,7 @@
 ---
 title: vue学习
 date: 2019-05-29 09:20:46
-tags: JS
+tags: vue
 categories: JS
 ---
 

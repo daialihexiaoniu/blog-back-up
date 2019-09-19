@@ -1,7 +1,7 @@
 ---
 title: 如何制作blog
 date: 2018-07-27 10:37:55
-tags: JS
+tags: hexo
 categories: JS
 ---
 
