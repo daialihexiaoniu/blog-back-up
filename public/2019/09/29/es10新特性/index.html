@@ -3,7 +3,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
   
-  <title>不同排序算法 - 陆阿黎的博客</title>
+  <title>es10 新特性 - 陆阿黎的博客</title>
   <meta charset="UTF-8">
   <meta name="description" content="天天撸狗，天天快乐">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,18 +11,18 @@
   
 
   <link rel="shortcut icon" href="/img/my-favicon.ico" type="image/png">
-  <meta name="description" content="记录各种不同的排序算法">
-<meta name="keywords" content="算法">
+  <meta name="description" content="本文主要介绍 es10 的新特性。">
+<meta name="keywords" content="ES10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不同排序算法">
-<meta property="og:url" content="http://yoursite.com/2019/02/20/不同排序算法/index.html">
+<meta property="og:title" content="es10 新特性">
+<meta property="og:url" content="http://yoursite.com/2019/09/29/es10新特性/index.html">
 <meta property="og:site_name" content="陆阿黎的博客">
-<meta property="og:description" content="记录各种不同的排序算法">
+<meta property="og:description" content="本文主要介绍 es10 的新特性。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-18T09:01:49.492Z">
+<meta property="og:updated_time" content="2019-09-29T02:01:23.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不同排序算法">
-<meta name="twitter:description" content="记录各种不同的排序算法">
+<meta name="twitter:title" content="es10 新特性">
+<meta name="twitter:description" content="本文主要介绍 es10 的新特性。">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -30,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1569722496912">
+  <link rel="stylesheet" href="/css/style.css?v=1569722496803">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -150,124 +150,71 @@
         
             <img src="/img/sky.png">
         
-        <h1>不同排序算法</h1>
+        <h1>es10 新特性</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2019年02月20日</a>
-    <a><i class="nexmoefont icon-areachart"></i>533 字</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>462 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/算法/">算法</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/ES10/">ES10</a>
     
   </div>
   <article>
-    <blockquote>
-<p>记录各种不同的排序算法</p>
-</blockquote>
+    <p>本文主要介绍 es10 的新特性。</p>
 <a id="more"></a>
-<pre><code>const arr = [44, 92, 82, 48, 2, 51];
-
-/********* 1、冒泡排序 **********/
-// 很常见很容易理解的排序算法， 排序思路：遍历数组，每次遍历就将最大（或最小）值推至最前。越往后遍历查询次数越少
-const bubbleSort = arr =&gt; {
-  const list = arr.slice(); //保证函数为纯函数
-  const len = list.length;
-  for (let i = 0; i &lt; len; i++) {
-    for (let j = len - 1; j &gt; i; j--) {
-      if (list[j] &lt; list[j - 1]) {
-        const tmp = list[j - 1];
-        list[j - 1] = list[j];
-        list[j] = tmp;
-      }
-    }
-  }
-  return list;
+<ol>
+<li><p>数组方法 Array.flat() 和 Array.flatMap<br><code>Array.flat()</code> 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。<br><code>Array.flatMap()</code> 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 和 深度值1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。</p>
+<pre><code>//  Array.flat() 示例：
+let arr = [1, 2, [3, 4, [5, 6, 7, [8, 9]], 10]]
+arr.flat(); // [1, 2, 3, 4, Array(4), 10] 效果等于 arr.flat(1)
+arr.flat(2); // [1, 2, 3, 4, 5, 6, 7, Array(2), 10]
+arr.flat(3); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+arr.flat(Infinity); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// Array.flatMap() 示例：
+let arr1 = [1, 2, 3, 4, 5];
+arr1.map(x =&gt; [x, x * 2]); 
+// [Array(2), Array(2), Array(2), Array(2), Array(2)]
+// 0: (2) [1, 2]
+// 1: (2) [2, 4]
+// 2: (2) [3, 6]
+// 3: (2) [4, 8]
+// 4: (2) [5, 10]
+arr1.flatMap(x =&gt; [x, x * 2]); //[1, 2, 2, 4, 3, 6, 4, 8, 5, 10]
+</code></pre></li>
+<li><p>Object.fromEntries()<br><code>Object.fromEntries()</code> 方法把键值对列表转换为一个对象。</p>
+<pre><code>let obj = { apple : 10, orange : 20, banana : 30 };
+let entries = Object.entries(obj);
+// 0: (2) [&quot;apple&quot;, 10]
+// 1: (2) [&quot;orange&quot;, 20]
+// 2: (2) [&quot;banana&quot;, 30]
+let fromEntries = Object.fromEntries(entries); // {apple: 10, orange: 20, banana: 30}
+</code></pre></li>
+<li>字符串方法：trimStart 和 trimEnd<br><code>trimStart()</code> 删除字符串的开头空格。<br><code>trimEnd()</code> 删除字符串末尾的空格。<pre><code>let s1 = &#39;  你好呀~   &#39;;
+s1.trimStart() // &quot;你好呀~   &quot;
+s1.trimEnd() // &quot;  你好呀~&quot;
+s1.trimStart().trimEnd() // &quot;你好呀~&quot;
+</code></pre></li>
+<li>try { } catch {} // catch 的参数可以省略了<br>在过去，<code>try/catch</code> 语句中的 <code>catch</code> 语句需要一个变量。 <code>try/catch</code> 语句帮助捕获终端级别的错误。在 ES10 中，捕获错误的变量是可选的，现在可以跳过错误变量：<pre><code>try {
+ return true;
 }
-
-/********* 2、改进版冒泡排序 **********/
-// 对上述冒泡排序的一种优化， 优化思路：当一次遍历前后数组不产生变化时，说明该数组已经有序，结束排序。
-const bubbleSort2 = arr =&gt; {
-  const list = arr.slice(); //保证函数为纯函数
-  const len = list.length;
-  for (let i = 0; i &lt; len; i++) {
-    let exchange = false;
-    for (let j = len - 1; j &gt; i; j--) {
-      if (list[j] &lt; list[j - 1]) {
-        const tmp = list[j - 1];
-        list[j - 1] = list[j];
-        list[j] = tmp;
-        exchange = true;
-      }
-    }
-    if (!exchange) return list
-  }
-  return list;
+catch
+{
+ return false;
 }
+</code></pre></li>
+</ol>
 
-/********* 3、选择排序 **********/
-// 在无序区中选出最小的元素，然后将它和无序区的第一个元素交换位置。
-const selectionSort = arr =&gt; {
-  const list = arr.slice(); //保证函数为纯函数
-  const len = list.length;
-  for (let i = 0; i &lt; len; i++) {
-    let k = i
-    for (let j = len - 1; j &gt; i; j--) {
-      if (list[j] &lt; list[k]) k = j;
-    }
-    if (k !== i) {
-      const tmp = list[k];
-      list[k] = list[i];
-      list[i] = tmp;
-    }
-  }
-  return list;
-}
-
-/********* 4、插入排序 **********/
-// 最普通的排序算法， 从数组下标1开始每增1项排序一次，越往后遍历次数越多；
-const insertSort = arr =&gt; {
-  const list = arr.slice(); //保证函数为纯函数
-  const len = list.length;
-  for (let i = 1; i &lt; len; i++) {
-    const tmp = list[i];
-    let j = i - 1;
-    while (j &gt;= 0 &amp;&amp; tmp &lt; list[j]) {
-      list[j + 1] = list[j];
-      j--;
-    }
-    list[j + 1] = tmp;
-  }
-  return list;
-}
-
-/********* 5、快速排序 **********/
-function quickSort(arr) {
-  const list = arr.slice(); //为了保证这个函数是纯函数，拷贝一次数组
-  if (list.length &lt;= 1) return list;
-  const pivot = list.splice(0, 1)[0]; //选第一个作为基数
-  const left = [];
-  const right = [];
-  for (let i = 0, len = list.length; i &lt; len; i++) {
-    if (list[i] &lt; pivot) {
-      left.push(list[i]);
-    } else {
-      right.push(list[i]);
-    }
-  }
-  return quickSort(left).concat([pivot], quickSort(right))
-}
-
-</code></pre>
   </article>
   
     
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>陆阿黎<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/2019/02/20/不同排序算法/" title="http://yoursite.com/2019/02/20/不同排序算法/" target="_blank" rel="noopener">http://yoursite.com/2019/02/20/不同排序算法/</a><br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2019/09/29/es10新特性/" title="http://yoursite.com/2019/09/29/es10新特性/" target="_blank" rel="noopener">http://yoursite.com/2019/09/29/es10新特性/</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -307,7 +254,7 @@ function quickSort(arr) {
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1569722496915"></script>
+<script src="/js/app.js?v=1569722496813"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
