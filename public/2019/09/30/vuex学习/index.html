@@ -3,7 +3,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
   
-  <title>微信小程序 - 陆阿黎的博客</title>
+  <title>vuex学习 - 陆阿黎的博客</title>
   <meta charset="UTF-8">
   <meta name="description" content="天天撸狗，天天快乐">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,18 +11,21 @@
   
 
   <link rel="shortcut icon" href="/img/my-favicon.ico" type="image/png">
-  <meta name="description" content="记录小程序的学习">
-<meta name="keywords" content="js知识">
+  <meta name="description" content="Vuex 学习">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序">
-<meta property="og:url" content="http://yoursite.com/2019/02/12/微信小程序/index.html">
+<meta property="og:title" content="vuex学习">
+<meta property="og:url" content="http://yoursite.com/2019/09/30/vuex学习/index.html">
 <meta property="og:site_name" content="陆阿黎的博客">
-<meta property="og:description" content="记录小程序的学习">
+<meta property="og:description" content="Vuex 学习">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-18T09:03:06.266Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/30/vuex学习/flow.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/30/vuex学习/vuex.png">
+<meta property="og:updated_time" content="2019-09-30T05:37:46.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序">
-<meta name="twitter:description" content="记录小程序的学习">
+<meta name="twitter:title" content="vuex学习">
+<meta name="twitter:description" content="Vuex 学习">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/30/vuex学习/flow.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -30,7 +33,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1569822173487">
+  <link rel="stylesheet" href="/css/style.css?v=1569822173382">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -150,29 +153,51 @@
         
             <img src="/img/sky.png">
         
-        <h1>微信小程序</h1>
+        <h1>vuex学习</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2019年02月12日</a>
-    <a><i class="nexmoefont icon-areachart"></i>54 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月30日</a>
+    <a><i class="nexmoefont icon-areachart"></i>606 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/vue/">vue</a>
     
   </div>
   <article>
-    <blockquote>
-<p>记录小程序的学习</p>
-</blockquote>
-<a id="more"></a>
+    <p>Vuex 学习<br><a id="more"></a></p>
+<h2 id="什么是-Vuex？"><a href="#什么是-Vuex？" class="headerlink" title="什么是 Vuex？"></a>什么是 Vuex？</h2><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
+<p>“单向数据流” 示意图如下：<br><img src="./flow.png" alt="单向数据流示意图"></p>
+<ul>
+<li>state：驱动应用的数据源</li>
+<li>view：以声明方式将 state 映射到视图</li>
+<li>actions：响应在 view 上的用户输入导致的状态变化</li>
+</ul>
+<p>Vuex 的基本思想是通过定义和隔离状态管理中的各种概念并通过强制规则维持视图和状态间的独立性，使我们的代码变得更结构化且易维护。</p>
+<p>Vuex 示意图如下：<br><img src="./vuex.png" alt="vuex"></p>
+<h2 id="什么情况下我应该使用-Vuex？"><a href="#什么情况下我应该使用-Vuex？" class="headerlink" title="什么情况下我应该使用 Vuex？"></a>什么情况下我应该使用 Vuex？</h2><p>如果应用足够简单，不需要开发大型单页应用，则不需要使用Vuex。<br>如果打算构建一个中大型单页应用，则需要考虑如何更好地在组件外部管理状态，这时，Vuex将是一个很好的选择。</p>
+<h2 id="核心-Store"><a href="#核心-Store" class="headerlink" title="核心 Store"></a>核心 Store</h2><p>每一个 Vuex 应用的核心就是 Store（仓库）。“Store”基本上就是一个容器，它包含着你的应用中大部分的状态 (state)。</p>
+<p>Vuex 和单纯的全局对象有以下两点不同：</p>
 <ol>
-<li>小程序api网址：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/api/</a></li>
-<li>不能操作dom节点，只能通过操作数据来操作</li>
-<li>project.config.json 设置配置文件存储的地方</li>
+<li>Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。</li>
+<li>你不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。</li>
 </ol>
+<h2 id="最简单的-Store"><a href="#最简单的-Store" class="headerlink" title="最简单的 Store"></a>最简单的 Store</h2><pre><code>// 如果在模块化构建系统中，请确保在开头调用了 Vue.use(Vuex)
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
+store.commit(&#39;increment&#39;)
+console.log(store.state.count) // -&gt; 1
+</code></pre><h1 id="State"><a href="#State" class="headerlink" title="State"></a>State</h1><h2 id="单一状态树"><a href="#单一状态树" class="headerlink" title="单一状态树"></a>单一状态树</h2><p>Vuex 使用<strong>单一状态树</strong>，用一个对象包含全部应用层级状态。每个应用仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
 
   </article>
   
@@ -180,7 +205,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>陆阿黎<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/2019/02/12/微信小程序/" title="http://yoursite.com/2019/02/12/微信小程序/" target="_blank" rel="noopener">http://yoursite.com/2019/02/12/微信小程序/</a><br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2019/09/30/vuex学习/" title="http://yoursite.com/2019/09/30/vuex学习/" target="_blank" rel="noopener">http://yoursite.com/2019/09/30/vuex学习/</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -220,7 +245,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1569822173491"></script>
+<script src="/js/app.js?v=1569822173387"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
