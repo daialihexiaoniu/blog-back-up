@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  
+  <title>vue-router - 陆阿黎的博客</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="天天撸狗，天天快乐">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/img/my-favicon.ico" type="image/png">
+  <meta name="description" content="vue-router 学习，内容来自vue-router">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-router">
+<meta property="og:url" content="http://yoursite.com/2019/10/09/vue-router/index.html">
+<meta property="og:site_name" content="陆阿黎的博客">
+<meta property="og:description" content="vue-router 学习，内容来自vue-router">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-09T02:33:25.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-router">
+<meta name="twitter:description" content="vue-router 学习，内容来自vue-router">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1570599578469">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/img/sky.png)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="陆阿黎" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="陆阿黎">
+            <img src="/img/avatar.jpg" alt="陆阿黎">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>19</div>
+        <div><span>标签</span>9</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/7666533" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/daialihexiaoniu/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/CSS/">CSS</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/JS/">JS</a>
+          <span class="category-list-count">16</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/杂记/">杂记</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/js知识/" style="font-size: 20px;">js知识</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+    </div>
+    
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2019 陆阿黎
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+            <img src="/img/sky.png">
+        
+        <h1>vue-router</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年10月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 10 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/vue/">vue</a>
+    
+  </div>
+  <article>
+    <p>vue-router 学习，内容来自<a href="https://router.vuejs.org/zh/" target="_blank" rel="noopener">vue-router</a><br><a id="more"></a></p>
+<h1 id="简单的-vue-router-实例"><a href="#简单的-vue-router-实例" class="headerlink" title="简单的 vue-router 实例"></a>简单的 vue-router 实例</h1><pre><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+  &lt;h1&gt;Hello App!&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;!-- 使用 router-link 组件来导航. --&gt;
+    &lt;!-- 通过传入 `to` 属性指定链接. --&gt;
+    &lt;!-- &lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签 --&gt;
+    &lt;router-link to=&quot;/foo&quot;&gt;Go to Foo&lt;/router-link&gt;
+    &lt;router-link to=&quot;/bar&quot;&gt;Go to Bar&lt;/router-link&gt;
+  &lt;/p&gt;
+  &lt;!-- 路由出口 --&gt;
+  &lt;!-- 路由匹配到的组件将渲染在这里 --&gt;
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+</code></pre><pre><code>// 0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
+
+// 1. 定义 (路由) 组件。
+// 可以从其他文件 import 进来
+const Foo = { template: &#39;&lt;div&gt;foo&lt;/div&gt;&#39; }
+const Bar = { template: &#39;&lt;div&gt;bar&lt;/div&gt;&#39; }
+
+// 2. 定义路由
+// 每个路由应该映射一个组件。 其中&quot;component&quot; 可以是
+// 通过 Vue.extend() 创建的组件构造器，
+// 或者，只是一个组件配置对象。
+// 我们晚点再讨论嵌套路由。
+const routes = [
+  { path: &#39;/foo&#39;, component: Foo },
+  { path: &#39;/bar&#39;, component: Bar }
+]
+
+// 3. 创建 router 实例，然后传 `routes` 配置
+// 你还可以传别的配置参数, 不过先这么简单着吧。
+const router = new VueRouter({
+  routes // (缩写) 相当于 routes: routes
+})
+
+// 4. 创建和挂载根实例。
+// 记得要通过 router 配置参数注入路由，
+// 从而让整个应用都有路由功能
+const app = new Vue({
+  router
+}).$mount(&#39;#app&#39;)
+
+// 现在，应用已经启动了！
+</code></pre><pre><code>// Home.vue
+export default {
+  computed: {
+    username() {
+      // 我们很快就会看到 `params` 是什么
+      return this.$route.params.username
+    }
+  },
+  methods: {
+    goBack() {
+      window.history.length &gt; 1 ? this.$router.go(-1) : this.$router.push(&#39;/&#39;)
+    }
+  }
+}
+</code></pre><h1 id="动态路由配置"><a href="#动态路由配置" class="headerlink" title="动态路由配置"></a>动态路由配置</h1><h2 id="动态路径参数"><a href="#动态路径参数" class="headerlink" title="动态路径参数"></a>动态路径参数</h2><pre><code>const router = new VueRouter({
+  routes: [
+    // 动态路径参数 以冒号开头
+    { path: &#39;/user/:id&#39;, component: User }
+  ]
+})
+</code></pre><p>多段路由参数：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>匹配路径</th>
+<th>$route.params</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/user/:username</td>
+<td>/user/evan</td>
+<td>{ username: ‘evan’ }</td>
+</tr>
+<tr>
+<td>/user/:username/post/:post_id</td>
+<td>/user/evan/post/123</td>
+<td>{ username: ‘evan’, post_id: ‘123’ }</td>
+</tr>
+</tbody>
+</table>
+<h2 id="响应路由参数的变化"><a href="#响应路由参数的变化" class="headerlink" title="响应路由参数的变化"></a>响应路由参数的变化</h2><p>提醒一下，当使用路由参数时，例如从 /user/foo 导航到 /user/bar，<strong>原来的组件实例会被复用</strong>。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。<strong>不过，这也意味着组件的生命周期钩子不会再被调用</strong>。<br>复用组件时，想对路由参数的变化作出响应的话，你可以简单地 watch (监测变化) <code>$route</code> 对象：</p>
+<pre><code>const User = {
+  template: &#39;...&#39;,
+  watch: {
+    &#39;$route&#39; (to, from) {
+      // 对路由变化作出响应...
+    }
+  }
+}
+</code></pre><p>或者使用 2.2 中引入的 beforeRouteUpdate 导航守卫：</p>
+<pre><code>const User = {
+  template: &#39;...&#39;,
+  beforeRouteUpdate (to, from, next) {
+    // react to route changes...
+    // don&#39;t forget to call next()
+  }
+}
+</code></pre><h2 id="捕获所有路由或-404-Not-found-路由"><a href="#捕获所有路由或-404-Not-found-路由" class="headerlink" title="捕获所有路由或 404 Not found 路由"></a>捕获所有路由或 404 Not found 路由</h2><p>常规参数只会匹配被 <code>/</code> 分隔的 URL 片段中的字符。如果想匹配任意路径，我们可以使用通配符 (<code>*</code>)：</p>
+<pre><code>{
+  // 会匹配所有路径
+  path: &#39;*&#39;
+}
+{
+  // 会匹配以 `/user-` 开头的任意路径
+  path: &#39;/user-*&#39;
+}
+</code></pre><p>当使用通配符路由时，请确保路由的顺序是正确的，也就是说含有通配符的路由应该放在最后。路由 <code>{ path: &#39;*&#39; }</code> 通常用于客户端 404 错误。<br>当使用一个通配符时，<code>$route.params</code> 内会自动添加一个名为 <code>pathMatch</code> 参数。它包含了 URL 通过通配符被匹配的部分：</p>
+<pre><code>// 给出一个路由 { path: &#39;/user-*&#39; }
+this.$router.push(&#39;/user-admin&#39;)
+this.$route.params.pathMatch // &#39;admin&#39;
+// 给出一个路由 { path: &#39;*&#39; }
+this.$router.push(&#39;/non-existing&#39;)
+this.$route.params.pathMatch // &#39;/non-existing&#39;
+</code></pre><h2 id="高级匹配模式"><a href="#高级匹配模式" class="headerlink" title="高级匹配模式"></a>高级匹配模式</h2><p><a href="https://router.vuejs.org/zh/guide/essentials/dynamic-matching.html#%E9%AB%98%E7%BA%A7%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">高级匹配模式</a></p>
+<h2 id="匹配优先级"><a href="#匹配优先级" class="headerlink" title="匹配优先级"></a>匹配优先级</h2><p>有时候，同一个路径可以匹配多个路由，此时，匹配的优先级就按照路由的定义顺序：谁先定义的，谁的优先级就最高。</p>
+<h1 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h1><pre><code>const router = new VueRouter({
+  routes: [
+    { path: &#39;/user/:id&#39;, component: User,
+      children: [
+        {
+          // 当 /user/:id/profile 匹配成功，
+          // UserProfile 会被渲染在 User 的 &lt;router-view&gt; 中
+          path: &#39;profile&#39;,
+          component: UserProfile
+        },
+        {
+          // 当 /user/:id/posts 匹配成功
+          // UserPosts 会被渲染在 User 的 &lt;router-view&gt; 中
+          path: &#39;posts&#39;,
+          component: UserPosts
+        }
+      ]
+    }
+  ]
+})
+</code></pre><p><strong>要注意，以 <code>/</code> 开头的嵌套路径会被当作根路径。 这让你充分的使用嵌套组件而无须设置嵌套的路径。</strong></p>
+<h1 id="编程式的导航"><a href="#编程式的导航" class="headerlink" title="编程式的导航"></a>编程式的导航</h1><p>除了使用 <code>&lt;router-link&gt;</code> 创建 a 标签来定义导航链接，我们还可以借助 router 的实例方法，通过编写代码来实现。</p>
+<h2 id="router-push-location-onComplete-onAbort"><a href="#router-push-location-onComplete-onAbort" class="headerlink" title="router.push(location, onComplete?, onAbort?)"></a><code>router.push(location, onComplete?, onAbort?)</code></h2><p><strong>注意：在 Vue 实例内部，你可以通过 $router 访问路由实例。因此你可以调用 this.$router.push。</strong><br>点击 <code>&lt;router-link :to=&quot;...&quot;&gt;</code> 等同于调用 <code>router.push(...)</code>。</p>
+<table>
+<thead>
+<tr>
+<th>声明式</th>
+<th>编程式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;router-link :to=&quot;...&quot;&gt;</code></td>
+<td><code>&lt;router-link :to=&quot;...&quot;&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code>// 字符串
+router.push(&#39;home&#39;)
+
+// 对象
+router.push({ path: &#39;home&#39; })
+
+// 命名的路由
+router.push({ name: &#39;user&#39;, params: { userId: &#39;123&#39; }})
+
+// 带查询参数，变成 /register?plan=private
+router.push({ path: &#39;register&#39;, query: { plan: &#39;private&#39; }})
+</code></pre><p><strong>注意：如果提供了 <code>path</code>，<code>params</code> 会被忽略，上述例子中的 <code>query</code> 并不属于这种情况。取而代之的是下面例子的做法，你需要提供路由的 <code>name</code> 或手写完整的带有参数的 <code>path：</code></strong></p>
+<pre><code>const userId = &#39;123&#39;
+router.push({ name: &#39;user&#39;, params: { userId }}) // -&gt; /user/123
+router.push({ path: `/user/${userId}` }) // -&gt; /user/123
+// 这里的 params 不生效
+router.push({ path: &#39;/user&#39;, params: { userId }}) // -&gt; /user
+</code></pre><h2 id="router-replace-location-onComplete-onAbort"><a href="#router-replace-location-onComplete-onAbort" class="headerlink" title="router.replace(location, onComplete?, onAbort?)"></a><code>router.replace(location, onComplete?, onAbort?)</code></h2><p>跟 <code>router.push</code> 很像，唯一的不同就是，它不会向 history 添加新记录，而是跟它的方法名一样 —— 替换掉当前的 history 记录。</p>
+<table>
+<thead>
+<tr>
+<th>声明式</th>
+<th>编程式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;router-link :to=&quot;...&quot; replace&gt;</code></td>
+<td><code>router.replace(...)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="router-go-n"><a href="#router-go-n" class="headerlink" title="router.go(n)"></a><code>router.go(n)</code></h2><p>这个方法的参数是一个整数，意思是在 history 记录中向前或者后退多少步，类似 <code>window.history.go(n)</code>。</p>
+<pre><code>// 在浏览器记录中前进一步，等同于 history.forward()
+router.go(1)
+
+// 后退一步记录，等同于 history.back()
+router.go(-1)
+
+// 前进 3 步记录
+router.go(3)
+
+// 如果 history 记录不够用，那就默默地失败呗
+router.go(-100)
+router.go(100)
+</code></pre><h1 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h1><pre><code>const router = new VueRouter({
+  routes: [
+    {
+      path: &#39;/user/:userId&#39;,
+      name: &#39;user&#39;,
+      component: User
+    }
+  ]
+})
+</code></pre><h1 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h1><p>有时候想同时 (同级) 展示多个视图，而不是嵌套展示，例如创建一个布局，有 <code>sidebar</code> (侧导航) 和 <code>main</code> (主内容) 两个视图，这个时候命名视图就派上用场了。你可以在界面中拥有多个单独命名的视图，而不是只有一个单独的出口。如果 <code>router-view</code> 没有设置名字，那么默认为 <code>default</code>。</p>
+<pre><code>&lt;router-view class=&quot;view one&quot;&gt;&lt;/router-view&gt;
+&lt;router-view class=&quot;view two&quot; name=&quot;a&quot;&gt;&lt;/router-view&gt;
+&lt;router-view class=&quot;view three&quot; name=&quot;b&quot;&gt;&lt;/router-view&gt;
+</code></pre><p>一个视图使用一个组件渲染，因此对于同个路由，多个视图就需要多个组件。确保正确使用 components 配置 (带上 s)：</p>
+<pre><code>const router = new VueRouter({
+  routes: [
+    {
+      path: &#39;/&#39;,
+      components: {
+        default: Foo,
+        a: Bar,
+        b: Baz
+      }
+    }
+  ]
+})
+</code></pre><h2 id="嵌套命名视图"><a href="#嵌套命名视图" class="headerlink" title="嵌套命名视图"></a>嵌套命名视图</h2><pre><code>/settings/emails                                       /settings/profile
++-----------------------------------+                  +------------------------------+
+| UserSettings                      |                  | UserSettings                 |
+| +-----+-------------------------+ |                  | +-----+--------------------+ |
+| | Nav | UserEmailsSubscriptions | |  +------------&gt;  | | Nav | UserProfile        | |
+| |     +-------------------------+ |                  | |     +--------------------+ |
+| |     |                         | |                  | |     | UserProfilePreview | |
+| +-----+-------------------------+ |                  | +-----+--------------------+ |
++-----------------------------------+                  +------------------------------+
+</code></pre><ul>
+<li><code>Nav</code> 只是一个常规组件。</li>
+<li><code>UserSettings</code> 是一个视图组件。</li>
+<li><code>UserEmailsSubscriptions</code>、<code>UserProfile</code>、<code>UserProfilePreview</code> 是嵌套的视图组件。</li>
+</ul>
+<pre><code>&lt;!-- UserSettings.vue --&gt;
+&lt;div&gt;
+  &lt;h1&gt;User Settings&lt;/h1&gt;
+  &lt;NavBar/&gt;
+  &lt;router-view/&gt;
+  &lt;router-view name=&quot;helper&quot;/&gt;
+&lt;/div&gt;
+</code></pre><pre><code>{
+  path: &#39;/settings&#39;,
+  // 你也可以在顶级路由就配置命名视图
+  component: UserSettings,
+  children: [{
+    path: &#39;emails&#39;,
+    component: UserEmailsSubscriptions
+  }, {
+    path: &#39;profile&#39;,
+    components: {
+      default: UserProfile,
+      helper: UserProfilePreview
+    }
+  }]
+}
+</code></pre><h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><p>重定向也是通过 <code>routes</code> 配置来完成，下面例子是从 <code>/a</code> 重定向到 <code>/b</code>：</p>
+<pre><code>const router = new VueRouter({
+  routes: [
+    { path: &#39;/a&#39;, redirect: &#39;/b&#39; }
+  ]
+})
+</code></pre><p>重定向的目标也可以是一个命名的路由：</p>
+<pre><code>const router = new VueRouter({
+  routes: [
+    { path: &#39;/a&#39;, redirect: { name: &#39;foo&#39; }}
+  ]
+})
+</code></pre><p>甚至是一个方法，动态返回重定向目标：</p>
+<pre><code>const router = new VueRouter({
+  routes: [
+    { path: &#39;/a&#39;, redirect: to =&gt; {
+      // 方法接收 目标路由 作为参数
+      // return 重定向的 字符串路径/路径对象
+    }}
+  ]
+})
+</code></pre><h1 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h1><p>“重定向”的意思是，当用户访问 <code>/a</code>时，URL 将会被替换成 <code>/b</code>，然后匹配路由为 <code>/b</code>，那么“别名”又是什么呢？</p>
+<p><strong><code>/a</code> 的别名是 <code>/b</code>，意味着，当用户访问 <code>/b</code> 时，URL 会保持为 <code>/b</code>，但是路由匹配则为 <code>/a</code>，就像用户访问 <code>/a</code> 一样。</strong></p>
+<pre><code>const router = new VueRouter({
+  routes: [
+    { path: &#39;/a&#39;, component: A, alias: &#39;/b&#39; }
+  ]
+})
+</code></pre>
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>陆阿黎<br>
+<strong>本文链接：</strong><a href="http://yoursite.com/2019/10/09/vue-router/" title="http://yoursite.com/2019/10/09/vue-router/" target="_blank" rel="noopener">http://yoursite.com/2019/10/09/vue-router/</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '6a32b32016b52f34d75a',
+        clientSecret: '02e131713b96def0aba672c34d002467ec247c1d',
+        id: decodeURI(window.location.pathname),
+        repo: 'daialihexiaoniu.github.io',
+        owner: 'daialihexiaoniu',
+        admin: 'daialihexiaoniu'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1570599578475"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
