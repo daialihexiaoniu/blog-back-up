@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head><meta name="generator" content="Hexo 3.8.0">
   
   <title>标签：js知识 - 陆阿黎的博客</title>
   <meta charset="UTF-8">
   <meta name="description" content="天天撸狗，天天快乐">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -21,14 +22,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="陆阿黎的博客">
 <meta name="twitter:description" content="天天撸狗，天天快乐">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1570599578763">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1592295756997">-->
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -37,10 +33,10 @@
     <div class="nexmoe-bg" style="background-image: url(/img/sky.png)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="陆阿黎" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg"></a>
+        <a href="/" title="陆阿黎" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg" alt="陆阿黎"></a>
        </div>
     </div>
   </div>
@@ -56,11 +52,17 @@
         <div><span>标签</span>9</div>
         <div><span>分类</span>3</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
             <div class="mdui-list-item-content">
                 回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
             </div>
         </a>
         
@@ -70,8 +72,16 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=https://daialihexiaoniu.github.io/" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
   
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">社交按钮</h3>
@@ -126,7 +136,7 @@
   
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
       <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/js知识/" style="font-size: 20px;">js知识</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
     </div>
     
@@ -135,7 +145,7 @@
   
 </aside>
     <div class="nexmoe-copyright">
-        &copy; 2019 陆阿黎
+        &copy; 2020 陆阿黎
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
     </div>
@@ -143,205 +153,93 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts" id="brand-waterfall">
-    
-    <div class="nexmoe-post">
-        <a href="/2019/06/20/前端知识总谱/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/sky.png" alt="前端知识谱">
-                
-                <h1>前端知识谱</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月20日</a>
-            <a><i class="nexmoefont icon-areachart"></i>7.6k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 32 分钟</a>
+        
+<section class="nexmoe-archives">
+
+    <article>
+        
+
+        
+            <h2>2019</h2>
+            <ul>
             
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
+                <li><span>06-20</span><a href="/2019/06/20/前端知识总谱/">前端知识谱</a></li>
             
+                <li><span>06-04</span><a href="/2019/06/04/一些面试题/">一些面试题</a></li>
             
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
+                <li><span>05-31</span><a href="/2019/05/31/前端需要知道的Javascript技巧/">前端需要知道的Javascript技巧</a></li>
             
-        </div>
-        <article>
+                <li><span>02-12</span><a href="/2019/02/12/微信小程序/">微信小程序</a></li>
             
-            <blockquote>
-<p>前端知识谱，从基础入手，往深层学习。一点点扎实自己，从基础沉淀。(持续更新)</p>
-</blockquote>
+            </ul>
+        
+            <h2>2018</h2>
+            <ul>
             
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2019/06/04/一些面试题/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/sky.png" alt="一些面试题">
-                
-                <h1>一些面试题</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月04日</a>
-            <a><i class="nexmoefont icon-areachart"></i>3.9k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
+                <li><span>08-01</span><a href="/2018/08/01/数组的map/">数组的 map、filter、sort 和 reduce 的用法</a></li>
             
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
+                <li><span>07-31</span><a href="/2018/07/31/函数防抖和函数节流/">函数防抖和函数节流</a></li>
             
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
-            
-        </div>
-        <article>
-            
-            <blockquote>
-<p>学而不思则罔，思而不学则殆。这一篇会将一些看到的面试题做一个总结。以后看到新的面试题也会持续的更新在这个里面。</p>
-</blockquote>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2019/05/31/前端需要知道的Javascript技巧/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/sky.png" alt="前端需要知道的Javascript技巧">
-                
-                <h1>前端需要知道的Javascript技巧</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年05月31日</a>
-            <a><i class="nexmoefont icon-areachart"></i>520 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-            
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
-            
-        </div>
-        <article>
-            
-            <blockquote>
-<p>前端需要知道的 JavaScript 技巧，会常常补充进来</p>
-</blockquote>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2019/02/12/微信小程序/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/sky.png" alt="微信小程序">
-                
-                <h1>微信小程序</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年02月12日</a>
-            <a><i class="nexmoefont icon-areachart"></i>54 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
-            
-        </div>
-        <article>
-            
-            <blockquote>
-<p>记录小程序的学习</p>
-</blockquote>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2018/08/01/数组的map/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/sky.png" alt="数组的 map、filter、sort 和 reduce 的用法">
-                
-                <h1>数组的 map、filter、sort 和 reduce 的用法</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2018年08月01日</a>
-            <a><i class="nexmoefont icon-areachart"></i>630 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-            
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
-            
-        </div>
-        <article>
-            
-            <blockquote>
-<p>本文文章来讲述一下关于map、filter、sort 和 reduce 的用法，如果有错误的地方欢迎下伙伴来指正、</p>
-</blockquote>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2018/07/31/函数防抖和函数节流/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/sky.png" alt="函数防抖和函数节流">
-                
-                <h1>函数防抖和函数节流</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月31日</a>
-            <a><i class="nexmoefont icon-areachart"></i>440 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/js知识/">js知识</a>
-            
-        </div>
-        <article>
-            
-            <h1 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h1><p>函数节流和函数防抖，两者都是优化高频率执行 js 代码的一种手段。</p>
-<p>在一定时间内，代码执行的次数不一定要非常多，达到一定的频率就足够了。有些情况下，代码运行频率达到一定程度时，超过那个频率所带来的效果是一样的，还不如把js代码执行的次数控制在一个合理的范围之内。既能够节省浏览器CPU的资源，又能够让页面浏览起来更加的顺畅，不会因为js的执行而发生卡顿。这就是我们要将的函数节流和函数防抖要做的事情。</p>
-<p><strong>函数防抖</strong>是指在频繁触发的情况下，只有再有足够的空闲时间时，才执行一代码一次。比如生活中做公交车，在一定时间内，如果有人陆续刷卡上车，司机就不会开车。只有没人刷卡了，司机才会开车。<br><strong>函数节流</strong>是指在一定时间内 js 只会执行一次。比如人眨眼睛，就是一定时间内眨一次。</p>
-            
-        </article>
-    </div>
-    
+            </ul>
+        
+    </article>
 </section>
 
+<style>
+.nexmoe-archives article > *:first-child {
+    margin-top: 0;
+}
+.nexmoe-archives article > *:last-child {
+    margin-bottom: 0;
+}
+.nexmoe-archives ul {
+    list-style: none;
+    padding-left: 0!important;
+}
+.nexmoe-archives li {
+    position: relative;
+    padding: 10px 0;
+}
+.nexmoe-archives li::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #ff4e6a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 11px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    z-index: 100;
+    position: relative;
+}
+.nexmoe-archives li::after {
+    content: "";
+    height: 100%;
+    width: 2px;
+    background: rgba(255, 78, 106, 0.2);
+    position: absolute;
+    left: 6px;
+    top: 20px;
+}
+.nexmoe-archives li:last-child:after {
+    display: none;
+}
+.nexmoe-archives span {
+    margin-right: 15px;
+}
+</style>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1570599578769"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
+<script src="/js/app.js?v=1592295757001"></script>
   
 
 

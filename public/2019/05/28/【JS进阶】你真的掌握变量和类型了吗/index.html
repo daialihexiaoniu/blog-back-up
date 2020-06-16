@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head><meta name="generator" content="Hexo 3.8.0">
   
   <title>【JS进阶】你真的掌握变量和类型了吗 - 陆阿黎的博客</title>
   <meta charset="UTF-8">
   <meta name="description" content="天天撸狗，天天快乐">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -23,14 +24,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【JS进阶】你真的掌握变量和类型了吗">
 <meta name="twitter:description" content="【JS进阶】你真的掌握变量和类型了吗, 参考地址">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1570599578592">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1592295756828">-->
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -39,10 +35,10 @@
     <div class="nexmoe-bg" style="background-image: url(/img/sky.png)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="陆阿黎" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg"></a>
+        <a href="/" title="陆阿黎" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg" alt="陆阿黎"></a>
        </div>
     </div>
   </div>
@@ -58,11 +54,17 @@
         <div><span>标签</span>9</div>
         <div><span>分类</span>3</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
             <div class="mdui-list-item-content">
                 回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
             </div>
         </a>
         
@@ -72,8 +74,16 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=https://daialihexiaoniu.github.io/" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
   
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">社交按钮</h3>
@@ -128,7 +138,7 @@
   
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
       <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/js知识/" style="font-size: 20px;">js知识</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
     </div>
     
@@ -137,7 +147,7 @@
   
 </aside>
     <div class="nexmoe-copyright">
-        &copy; 2019 陆阿黎
+        &copy; 2020 陆阿黎
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
     </div>
@@ -146,23 +156,23 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-            <img src="/img/sky.png">
-        
-        <h1>【JS进阶】你真的掌握变量和类型了吗</h1>
-    </div>
-  <div class="nexmoe-post-meta">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 13.88888888888889%;"> 
+          <img data-src="/img/sky.png" data-sizes="auto" alt="【JS进阶】你真的掌握变量和类型了吗" class="lazyload">
+          <h1>【JS进阶】你真的掌握变量和类型了吗</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年05月28日</a>
     <a><i class="nexmoefont icon-areachart"></i>348 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-    
-      <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
-    
-    
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/JS/">JS</a>
+</div>
+
+  <div class="nexmoe-post-right">
     
   </div>
+
   <article>
     <blockquote>
 <p>【JS进阶】你真的掌握变量和类型了吗, <a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f" target="_blank" rel="noopener">参考地址</a></p>
@@ -174,20 +184,30 @@
 <h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><p>Object：除了常用的 Object，Array、Function 等都属于特殊的对象</p>
 <h2 id="为什么区分原始类型和对象类型"><a href="#为什么区分原始类型和对象类型" class="headerlink" title="为什么区分原始类型和对象类型"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-2" target="_blank" rel="noopener">为什么区分原始类型和对象类型</a></h2><h3 id="不可变性"><a href="#不可变性" class="headerlink" title="不可变性"></a>不可变性</h3><h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><h3 id="值传递和引用传递"><a href="#值传递和引用传递" class="headerlink" title="值传递和引用传递"></a>值传递和引用传递</h3><h2 id="分不清的-Null-和-Undefined"><a href="#分不清的-Null-和-Undefined" class="headerlink" title="分不清的 Null 和 Undefined"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-8" target="_blank" rel="noopener">分不清的 Null 和 Undefined</a></h2><h2 id="不太熟的-Symbol-类型"><a href="#不太熟的-Symbol-类型" class="headerlink" title="不太熟的 Symbol 类型"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-9" target="_blank" rel="noopener">不太熟的 Symbol 类型</a></h2><h3 id="Symbol-的特性"><a href="#Symbol-的特性" class="headerlink" title="Symbol 的特性"></a>Symbol 的特性</h3><h3 id="Symbol-的应用场景"><a href="#Symbol-的应用场景" class="headerlink" title="Symbol 的应用场景"></a>Symbol 的应用场景</h3><h2 id="不老实的-Number-类型"><a href="#不老实的-Number-类型" class="headerlink" title="不老实的 Number 类型"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-12" target="_blank" rel="noopener">不老实的 Number 类型</a></h2><h3 id="精度丢失"><a href="#精度丢失" class="headerlink" title="精度丢失"></a>精度丢失</h3><h3 id="对结果的分析—更多的问题"><a href="#对结果的分析—更多的问题" class="headerlink" title="对结果的分析—更多的问题"></a>对结果的分析—更多的问题</h3><h3 id="js-对二进制小数的存储方式"><a href="#js-对二进制小数的存储方式" class="headerlink" title="js 对二进制小数的存储方式"></a>js 对二进制小数的存储方式</h3><h3 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h3><h3 id="js中的toString-2"><a href="#js中的toString-2" class="headerlink" title="js中的toString(2)"></a>js中的toString(2)</h3><h3 id="JavaScript能表示的最大数字"><a href="#JavaScript能表示的最大数字" class="headerlink" title="JavaScript能表示的最大数字"></a>JavaScript能表示的最大数字</h3><h3 id="最大安全数字"><a href="#最大安全数字" class="headerlink" title="最大安全数字"></a>最大安全数字</h3><h2 id="还有哪些引用类型"><a href="#还有哪些引用类型" class="headerlink" title="还有哪些引用类型"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-20" target="_blank" rel="noopener">还有哪些引用类型</a></h2><h3 id="包装类型"><a href="#包装类型" class="headerlink" title="包装类型"></a>包装类型</h3><h3 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h3><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-23" target="_blank" rel="noopener">类型转换</a></h2><h3 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h3><h3 id="if-语句和逻辑语句"><a href="#if-语句和逻辑语句" class="headerlink" title="if 语句和逻辑语句"></a>if 语句和逻辑语句</h3><h3 id="各种运数学算符"><a href="#各种运数学算符" class="headerlink" title="各种运数学算符"></a>各种运数学算符</h3><h3 id><a href="#" class="headerlink" title="=="></a>==</h3><h3 id="一道有意思的面试题"><a href="#一道有意思的面试题" class="headerlink" title="一道有意思的面试题"></a>一道有意思的面试题</h3><h2 id="判断-JavaScript-数据类型的方式"><a href="#判断-JavaScript-数据类型的方式" class="headerlink" title="判断 JavaScript 数据类型的方式"></a><a href="https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-29" target="_blank" rel="noopener">判断 JavaScript 数据类型的方式</a></h2><h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h3><h3 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h3>
   </article>
-  
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
     
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>陆阿黎<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/" title="http://yoursite.com/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/" target="_blank" rel="noopener">http://yoursite.com/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/JS/">JS</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/JS/">JS</a>
+    
 </div>
 
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>陆阿黎<br>
+    <strong>本文链接：</strong><a href="http://yoursite.com/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/" title="http://yoursite.com/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/" target="_blank" rel="noopener">http://yoursite.com/2019/05/28/【JS进阶】你真的掌握变量和类型了吗/</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
 
-  
-  <section class="nexmoe-comment">
+
+    
+    <section class="nexmoe-comment">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
 <div id="gitalk"></div>
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
@@ -195,7 +215,7 @@
     var gitalk = new Gitalk({
         clientID: '6a32b32016b52f34d75a',
         clientSecret: '02e131713b96def0aba672c34d002467ec247c1d',
-        id: decodeURI(window.location.pathname),
+        id: window.location.pathname,
         repo: 'daialihexiaoniu.github.io',
         owner: 'daialihexiaoniu',
         admin: 'daialihexiaoniu'
@@ -203,28 +223,18 @@
     gitalk.render('gitalk')
 </script>
 </section>
+  </div>
 </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1570599578597"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
+<script src="/js/app.js?v=1592295756833"></script>
   
 
 
